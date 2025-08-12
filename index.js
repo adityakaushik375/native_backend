@@ -1,0 +1,21 @@
+import express from "express";
+import dotenv from "dotenv";
+import { initDB } from "./config/db.js";
+import transactionRoute from "./route/transactionRoute.js";
+const app = express();
+dotenv.config();
+
+const PORT = process.env.PORT;
+
+app.get("/", (req, res) => {
+  console.log("hello express");
+  res.send("hello999999999999999999999999999999");
+});
+
+app.use('/api/transaction',transactionRoute);
+
+initDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+});
