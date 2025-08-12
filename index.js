@@ -6,6 +6,7 @@ const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT;
+if (process.env.NODE_ENV === "production") job.start();
 
 app.get("/", (req, res) => {
   console.log("hello express");
