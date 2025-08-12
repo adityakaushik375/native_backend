@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { initDB } from "./config/db.js";
 import transactionRoute from "./route/transactionRoute.js";
+import job from "./config/cron.js";
 const app = express();
 dotenv.config();
 
