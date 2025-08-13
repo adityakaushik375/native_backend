@@ -4,6 +4,7 @@ import { initDB } from "./config/db.js";
 import transactionRoute from "./route/transactionRoute.js";
 import job from "./config/cron.js";
 const app = express();
+app.use(express.json());
 dotenv.config();
 
 const PORT = process.env.PORT;
